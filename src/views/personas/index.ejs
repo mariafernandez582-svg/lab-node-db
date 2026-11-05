@@ -26,17 +26,24 @@
             </tr>
           </thead>
           <tbody>
-            <%# TODO (paso 10): si no hay personas, muestra una fila de aviso. %>
-            <%# Recorre personas con forEach y pinta nombre, apellido, edad y correo. %>
-            <tr class="aviso">
-              <td colspan="4">
-                Completa el paso 10 del README para mostrar cada persona.
-              </td>
-            </tr>
+            <% if (personas.length === 0) { %>
+              <tr class="aviso">
+                <td colspan="4">No hay personas registradas en la colección.</td>
+              </tr>
+            <% } %>
+
+            <% personas.forEach(function (persona) { %>
+              <tr>
+                <td><%= persona.nombre %></td>
+                <td><%= persona.apellido %></td>
+                <td><%= persona.edad %></td>
+                <td><%= persona.correo %></td>
+              </tr>
+            <% }) %>
           </tbody>
         </table>
 
-        <%# TODO (paso 10): debajo de la tabla muestra el total con personas.length %>
+        <p class="total">Total: <%= personas.length %></p>
       </section>
     </main>
   </body>

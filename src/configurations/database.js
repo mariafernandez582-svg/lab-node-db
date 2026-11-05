@@ -16,12 +16,8 @@ async function conectarBaseDeDatos() {
     );
   }
 
-  // TODO (paso 4): conecta con mongoose.connect(uri).
-  // Luego imprime en consola el nombre de la base: mongoose.connection.name
-  // Borra el throw cuando la conexión esté escrita.
-  throw new Error(
-    "TODO pendiente (paso 4): en src/configurations/database.js llama a mongoose.connect(uri) y elimina este throw."
-  );
+  await mongoose.connect(uri);
+console.log("Conectado a MongoDB. Base de datos:", mongoose.connection.name);
 }
 
 module.exports = conectarBaseDeDatos;

@@ -18,6 +18,8 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 // TODO (paso 9): descomenta las dos líneas. Deben quedar ANTES de app.get.
 // const personaRoutes = require("./routes/personaRoutes");
 // app.use("/", personaRoutes);
+const personaRoutes = require("./routes/personaRoutes");
+app.use("/", personaRoutes);
 
 app.get("/", (req, res) => {
   res.send("Servidor en marcha. Sigue el README desde el paso 6 para mostrar las personas.");
